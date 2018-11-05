@@ -17,4 +17,4 @@ ENTRYPOINT ${MULE_HOME}/bin/mule && /bin/bash
 
 # Default http port
 
-EXPOSE 8081 8082 8084 9091
+EXPOSE 8081 8082 8084 9091 8083
