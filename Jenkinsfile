@@ -37,12 +37,12 @@ dir ('.' ) {
 }
 def buildApp() {
 dir ('' ) {
-def appImage = docker.build("eaiesbhub/mule4-helloworld:${BUILD_NUMBER}")
+def appImage = docker.build("eaiesbhub/mule-4:${BUILD_NUMBER}")
 }
 }
 def deploy() {
-	def containerName = 'mule4-helloworld'
+	def containerName = 'mule-4'
 	sh "docker ps -f name=${containerName} -q | xargs --no-run-if-empty docker stop"
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
-	sh "docker run -d --name ${containerName} eaiesbhub/mule4-heeloworld:${BUILD_NUMBER}"
+	sh "docker run -d --name ${containerName} eaiesbhub/mule-4:${BUILD_NUMBER}"
 }
