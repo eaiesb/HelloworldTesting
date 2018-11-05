@@ -14,7 +14,7 @@ steps { buildsrc() }
 }
 stage('renaming the target zip file') {
     steps {
-               sh 'mv target/muletesting.jar helloworld.jar'
+               sh 'mv target/helloworld-1.0.0-SNAPSHOT-mule-application.jar helloworld.jar'
     }
 }  
 stage("Buildimg") {
