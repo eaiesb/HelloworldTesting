@@ -52,6 +52,6 @@ def deploy() {
 }
 def clouddeploy() {
     dir ('.' ) {
-    sh '/app/ciplatform/apache-maven-3.3.9/bin/mvn clean deploy'
+    sh '/app/ciplatform/apache-maven-3.3.9/bin/mvn clean package deploy'
     }
 }	
