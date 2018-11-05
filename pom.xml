@@ -57,6 +57,16 @@
         </dependency>
 	</dependencies>
 
+	<distributionManagement>
+        <!-- use the following if you're not using a snapshot version. -->
+         <repository>
+            <uniqueVersion>false</uniqueVersion>
+           <id>mycloudhub</id>
+           <name>Cloud Hub</name>
+           <url>https://anypoint.mulesoft.com/cloudhub/</url>
+           <layout>default</layout>
+         </repository>
+        </distributionManagement>	
 	<repositories>
           <repository>
             <id>anypoint-exchange</id>
