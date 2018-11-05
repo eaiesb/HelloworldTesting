@@ -14,17 +14,17 @@ steps { buildsrc() }
 }
 stage('renaming the target zip file') {
     steps {
-               sh 'mv target/helloworld-1.0.0-SNAPSHOT-mule-application.jar helloworld.jar'
+               sh 'mv target/muletesting.jar helloworld.jar'
     }
 }  
 stage("Buildimg") {
 steps { 
-	slackSend (message: 'Building the image')
+	
 	buildApp() }
 }
 stage("Deploy") {
   steps { deploy() 
-	  slackSend (message: 'container deployed sucessfully')
+	  
 	}
 }
 }
@@ -32,7 +32,7 @@ stage("Deploy") {
 // steps
 def buildsrc() {
 dir ('.' ) {
-    sh '/usr/maven/apache-maven-3.3.9/bin/mvn clean install'
+    sh '/app/ciplatform/apache-maven-3.3.9/bin/mvn clean install'
 }
 }
 def buildApp() {
