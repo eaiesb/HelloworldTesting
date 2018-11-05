@@ -50,7 +50,7 @@ def deploy() {
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
 	sh "docker run -d --name ${containerName} eaiesbhub/mule-4:${BUILD_NUMBER}"
 }
-def deploy() {
+def clouddeploy() {
     dir ('.' ) {
     sh '/app/ciplatform/apache-maven-3.3.9/bin/mvn clean deploy'
     }
